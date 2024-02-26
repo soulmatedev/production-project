@@ -1,11 +1,22 @@
 {
   "compilerOptions": {
+    // То, куда производится сборка.
     "outDir": "./dist/",
+    // Подсвечивает места где не указан тип. Или где явно нужно указать тип any.
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "ESNext",
     "target": "es5",
     "jsx": "react",
+    // Разрешает обрабатывать не только ts-файлы, но и js.
     "allowJs": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    // Убирает в import звездочки.
+    "allowSyntheticDefaultImports": true,
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
   }
 }

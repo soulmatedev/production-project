@@ -1,8 +1,8 @@
-const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+import path from 'path';
+import webpack from 'webpack';
+import HTMLWebpackPlugin from 'html-webpack-plugin';
 
-module.exports = {
+const config: webpack.Configuration = {
 	mode: "development", // Если установить "production", то будет сильно сжимать файлы.
 	entry: path.resolve(__dirname, 'src', 'index.ts'), // Cтартовая точка приложения.
 	output: {
@@ -29,3 +29,5 @@ module.exports = {
 		extensions: ['.tsx', '.ts', '.js'], // Чтобы при импорте не указывать расширение файла.
 	},
 }
+export default config;
+
