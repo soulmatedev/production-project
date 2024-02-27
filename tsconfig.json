@@ -10,6 +10,7 @@
     // Разрешает обрабатывать не только ts-файлы, но и js.
     "allowJs": true,
     "moduleResolution": "node",
+    "baseUrl": ".",
     "esModuleInterop": true,
     // Убирает в import звездочки.
     "allowSyntheticDefaultImports": true,

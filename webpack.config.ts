@@ -1,33 +1,21 @@
-import path from 'path';
 import webpack from 'webpack';
-import HTMLWebpackPlugin from 'html-webpack-plugin';
+import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
+import {BuildPaths} from "./config/build/types/config";
+import path from "path";
 
-const config: webpack.Configuration = {
-	mode: "development", // Если установить "production", то будет сильно сжимать файлы.
-	entry: path.resolve(__dirname, 'src', 'index.ts'), // Cтартовая точка приложения.
-	output: {
-		filename: "[name].[contenthash].ts", // Где будет находиться сборщик.
-		path: path.resolve(__dirname, 'build'), // Путь до сборщика.
-		clean: true, // Удаляет лишние файлы.
-	},
-	plugins: [
-		new HTMLWebpackPlugin({
-			template: path.resolve(__dirname, 'public', 'index.html')
-		}),
-		new webpack.ProgressPlugin(),
-	],
-	module: {
-		rules: [
-			{
-				test: /\.tsx?$/, // Разрешает поиск по ts и tsx.
-				use: 'ts-loader',
-				exclude: /node_modules/, // Не учитывает node_modules.
-			},
-		],
-	},
-	resolve: {
-		extensions: ['.tsx', '.ts', '.js'], // Чтобы при импорте не указывать расширение файла.
-	},
+const paths: BuildPaths = {
+	entry: path.resolve(__dirname, 'src', 'index.ts'),
+	build: path.resolve(__dirname, 'build'),
+	html: path.resolve(__dirname, 'public', 'index.html'),
 }
+
+const mode = 'development';
+const isDev = mode === 'development';
+
+const config: webpack.Configuration = buildWebpackConfig({
+	mode: 'development',
+	paths,
+	isDev,
+})
 export default config;
 
