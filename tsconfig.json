@@ -4,13 +4,13 @@
     "outDir": "./dist/",
     // Подсвечивает места где не указан тип. Или где явно нужно указать тип any.
     "noImplicitAny": true,
-    "module": "ESNext",
+    "module": "es6",
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     // Разрешает обрабатывать не только ts-файлы, но и js.
     "allowJs": true,
     "moduleResolution": "node",
-    // "baseUrl": ".",
+    "baseUrl": ".",
     "esModuleInterop": true,
     // Убирает в import звездочки.
     "allowSyntheticDefaultImports": true,
