@@ -4,7 +4,7 @@
     "outDir": "./dist/",
     // Подсвечивает места где не указан тип. Или где явно нужно указать тип any.
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "esnext",
     "target": "es5",
     "jsx": "react-jsx",
     // Разрешает обрабатывать не только ts-файлы, но и js.
