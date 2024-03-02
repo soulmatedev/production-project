@@ -11,6 +11,9 @@
     "allowJs": true,
     "moduleResolution": "node",
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"],
+    },
     "esModuleInterop": true,
     // Убирает в import звездочки.
     "allowSyntheticDefaultImports": true,
