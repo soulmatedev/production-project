@@ -15,7 +15,6 @@ export const Button: FC<ButtonProps> = (props) => {
 	const {
 		className,
 		children,
-		onClick,
 		theme ,
 		...otherProps
 	} = props;
