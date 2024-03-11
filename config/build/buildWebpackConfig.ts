@@ -9,12 +9,12 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
 	const { paths, mode, isDev} = options;
 
 	return {
-		mode, // Если установить "production", то будет сильно сжимать файлы.
-		entry: paths.entry, // Cтартовая точка приложения.
+		mode,
+		entry: paths.entry,
 		output: {
-			filename: "[name].[contenthash].js", // Где будет находиться сборщик.
-			path: paths.build, // Путь до сборщика.
-			clean: true, // Удаляет лишние файлы.
+			filename: "[name].[contenthash].js",
+			path: paths.build,
+			clean: true,
 		},
 		plugins: buildPlugins(options),
 		module: {
